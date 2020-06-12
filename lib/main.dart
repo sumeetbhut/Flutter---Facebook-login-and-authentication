@@ -60,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
             child: isLoggedIn
                 ? _displayUserData(profileData)
                 : ProgressHUD(
-                    child: _displayLoginButton1(), inAsyncCall: isLoading),
+                    child: _displayLoginButton(), inAsyncCall: isLoading),
           ),
         ),
       ),
@@ -126,17 +126,6 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   _displayLoginButton() {
-    return RaisedButton(
-      child: Text(
-        "Login with Facebook",
-        style: TextStyle(color: Colors.white),
-      ),
-      color: Colors.blue,
-      onPressed: () => initiateFacebookLogin(),
-    );
-  }
-
-  _displayLoginButton1() {
     return Scaffold(
       body: Container(
         color: Colors.white,
